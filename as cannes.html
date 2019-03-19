@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script type="text/javascript" src="jquery-3.3.1.min.js"></script>
+  <script type="text/javascript" src="database.json"></script>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">                       
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.0/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+  <script type="text/javascript" src="database.json"></script>
+  <script src="vue.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+  <head>
+  <script src='https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js'></script>
+</head>
+  
+<body> 
+
+<header>
+
+  <div class="contenu">
+  <!-- Logo de l'AS Cannes -->
+    <img src="Ascanneslogonoir.png">
+
+<!-- Les icones de reseaux sociaux -->
+    <span>
+      <i class="fab fa-facebook-f"></i>
+      <i class="fab fa-instagram"></i>
+      <i class="fab fa-twitter"></i>  
+      <i class="fab fa-youtube"></i>  
+    </span>
+  </div>
+
+</header>
+
+<section>
+    <img class="image" src="Ascanneslogonoir.png">
+
+  <div class="barre">
+
+    <div class="text-right h4 text-muted ">
+      <a href="" > BILLETTERIE |</a>
+      <a href="">CONTACT </a>
+    </div>  
+
+      <div class="text-center liens ">
+      
+          <div >
+            <a href="">| ACCUEIL |</a>
+            <a href="">DRAGONS |</a>
+            <a href="">EQUIPE PRO |</a>
+            <a href="">PARTENAIRES |</a>
+            <a href="">ADHERENT |</a>
+            <a href="">BLOG |</a>
+            <a href="">AMATEURS |</a>
+          
+            <span class="text-right ml-3 h3">
+              <i class="fab fa-facebook-f"></i>
+              <i class="fab fa-instagram"></i>
+              <i class="fab fa-twitter"></i>  
+              <i class="fab fa-youtube"></i>  
+            </span> 
+          </div>
+
+      </div>
+
+ 
+ 
+  </div>
+
+          <span class="text-right pr-3 reseau">
+            <i class="fab fa-facebook-f "></i>
+            <i class="fab fa-instagram"></i>
+            <i class="fab fa-twitter"></i>  
+            <i class="fab fa-youtube"></i>  
+          </span> 
+
+ <h1> ADHERENTS </h1>
+</section>
+       
+ <h2 class="ml-5 text-white"> ADHERENTS </h2>
+            <div id="content">
+             
+           		   <input type="text" v-model="search" placeholder="Recherhez">
+              
+                <table class="table">
+                    <thead id="maintable" >
+                      <tr class="bg-danger">
+                        <th scope="col" v-for="titre in titres" class="h-25">{{titre.toUpperCase()}}</th>
+                      </tr>
+                    </thead>
+                    
+
+                    	<tbody>  
+
+                    		    <button>Recherchez</button>
+                        	    <tr v-for="(adherent) in filtreNom" class="item" v-bind:id="adherent.index" >
+
+	                        	 
+		                        	  <td>{{adherent.index}} </a></td>  
+		                            <td>{{adherent.name}}</td>
+		                            <td>{{adherent.company}}</td>
+		                            <td>{{adherent.age}} </td>
+		                             
+                       		 	</tr>
+                       		
+                    	</tbody>
+                  
+                  </table>
+                
+            </div>
+
+
+
+
+    <!-- TEMPLATE DETAILS -->
+  
+    <div id="details"> 
+      <h3>{{ adherent.name }}</h3>
+      <p>Sexe : {{ adherent.gender }}</p>
+      <p>Email : {{ adherent.email }}</p>
+      <p>Age : {{ adherent.age }}</p>
+ 
+
+    </div>
+  <div class="h">
+  <canvas id="myChart"></canvas>
+</div>
+ 
+<footer>
+  
+
+
+<!-- Icone des reseaux sociaux footer -->
+<span >
+<i class="fab fa-facebook-f cercle">     </i>
+<i class="fab fa-instagram cercle">     </i>
+<i class="fab fa-twitter cercle"></i>  
+<i class="fab fa-youtube cercle"></i>  
+</span>
+
+<!-- Texte footer -->
+<div class="text">
+<p> Copyright 1942-2019 | AS CANNES VOLLEY BALL | CGV </p>
+<a href="">Politique de Confidentialité |</a>
+<a href="">Contact |</a>
+<a href="">Gestion des Cookies |</a>
+<a href="">Powered by Ideal-Com</a>
+</div>
+
+<div class="row bas">
+  <div class="col">
+    <a href="">| DRAGON </a>
+    <p>HISTORIQUE</p>
+    <p>ORGANIGRAMME</p>
+    <p>PALAIS DES VICTOIRES </p>
+  </div>
+
+  <div class="col">
+    <a href="">| PRO</a>
+    <p>EFFECTIF PRO</p>
+    <p> CALENDRIERS ET RESULTATS</p>
+    <p>CLASSEMENT</p>
+    <p>LIVE SCORE</p>
+  </div>
+
+  <div class="col">
+    <a href="">| CENTRE DE FORMATI0N</a>
+    <p>L'ORGANIGRAMME</p>
+    <p>STAGIAIRES CFCP</p>
+  </div>
+   
+  <div class="col">
+    <a href="">| AMATEURS </a>
+    <p>ACTUALITES</p>
+    <p>LES ENTRAINEURS</p>
+    <p>INSCRIPTION</p>
+    <p>NATIONAL2-CDC</p>
+    <p>NATIONAL3</p>
+    <p>M20 - COUPE DE FRANCE</p>
+    <p>M17/M20-CADETS/JUNIORS</p>
+    <p>M17-CADETS</p>
+    <p>M15-MINIMES</p>
+    <p>Lorem ipsum</p>
+    <p>Lorem ipsum</p>
+    <p>Lorem ipsum</p>
+  </div>
+
+ <div class="col">
+    <a href="">| LE BEACH VOLLEY </a>
+  </div>
+
+   <div class="col">
+    <a href="">| PARTENAIRES</a>
+    <p> PARTENAIRES</p>
+    <p>DEVENIR PARTENAIRES</p>
+      <div class="col">
+    <a href="">| MEDIATHEQUE</a>
+    <p>MEDIATHEQUE PHOTOS</p>
+    <p>MEDIATHEQUE VIDEOS</p>
+
+  </div>
+
+
+</div>
+
+
+</footer>
+
+<script src="canvasjs.min.js"></script>
+<script type="text/javascript" src="script.js"></script>
+</body>
+</html>
+   
